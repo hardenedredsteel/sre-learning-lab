@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Ansible local artifacts and secrets
+*.retry
+.vault_pass
+*.vault
+*.vault.yml
+*.vault.yaml
+ansible/credentials/
+ansible/secrets/
+
+# SSH keys and local configuration
+*.pem
+*.key
+id_rsa
+id_ed25519
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+*.tmp
