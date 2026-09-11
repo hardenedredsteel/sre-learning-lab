@@ -31,6 +31,13 @@ ps aux --sort=-%mem | head -n 10
 ## Безопасное исправление
 
 ```bash
+# Уточнить владельца, состояние, команду запуска и родительский процесс
+ps -p <PID> -o pid,ppid,user,stat,%cpu,%mem,etime,cmd
+
+# Если это systemd-сервис, предпочтительнее остановить именно сервис
+systemctl status <service-name>
+sudo systemctl stop <service-name>
+
 # Мягкая остановка процесса по PID
 kill <PID>
 
