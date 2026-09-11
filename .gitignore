@@ -240,3 +240,8 @@ id_ed25519
 tmp/
 temp/
 *.tmp
+
+# валидатор от ии залез
+.DS_Store
+docs/.DS_Store
+labs/.DS_Store
