@@ -38,11 +38,17 @@ ps -p <PID> -o pid,ppid,user,stat,%cpu,%mem,etime,cmd
 systemctl status <service-name>
 sudo systemctl stop <service-name>
 
-# Мягкая остановка процесса по PID
+# SIGTERM: попросить процесс штатно завершиться
 kill <PID>
 
-# Принудительная остановка (если не реагирует)
+# SIGKILL: крайняя мера после проверки причины и ожидания
 kill -9 <PID>
+
+# Посмотреть состояние процесса и точку ожидания в ядре
+ps -p <PID> -o pid,stat,wchan,cmd
+
+# Найти все процессы в состоянии D
+ps -eo pid,stat,comm | awk '$2 ~ /^D/ {print}'
 ```
 
 ## Проверка результата
