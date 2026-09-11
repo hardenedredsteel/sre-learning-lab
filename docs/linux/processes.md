@@ -117,3 +117,4 @@ systemctl stop <service>
     systemctl cat <service>
     ```
   - оценить влияние на другие сервисы и пользователей.
+  
